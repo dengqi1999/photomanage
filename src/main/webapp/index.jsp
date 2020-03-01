@@ -273,14 +273,14 @@
     function deleteMethod(){
     	if(flag==0){
     		if(confirm("确认删除已选择图片吗？")){
-        		check=check.substring(0,deletelist.length-1);
+        		check=check.substring(0,check.length-1);
         		$.ajax({
         			url:"${APP_PATH}/photo/"+check,
         			type:"delete",
         			success:function(result){
         				alert(result.msg);
         				to_page(current_page);
-        				deletelist="";
+        				check="";
         			}
         		});
         	}
