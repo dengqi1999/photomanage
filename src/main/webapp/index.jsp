@@ -251,7 +251,7 @@
             });
         }else{//删除状态
         	$(this).toggleClass("redBorder");
-            deletelist=deletelist+($(this).attr("id"))+"-";
+            check=check+($(this).attr("id"))+"-";
         }
     });
     //获取照片信息并设置修改模态框
@@ -273,9 +273,9 @@
     function deleteMethod(){
     	if(flag==0){
     		if(confirm("确认删除已选择图片吗？")){
-        		deletelist=deletelist.substring(0,deletelist.length-1);
+        		check=check.substring(0,deletelist.length-1);
         		$.ajax({
-        			url:"${APP_PATH}/photo/"+deletelist,
+        			url:"${APP_PATH}/photo/"+check,
         			type:"delete",
         			success:function(result){
         				alert(result.msg);
